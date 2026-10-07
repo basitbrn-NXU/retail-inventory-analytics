@@ -1,0 +1,33 @@
+{
+  "source_sha256": {
+    "sales_train_evaluation.csv": "4b4a47c44c38380d2a9168216fea8c9ff2f31b1ddb772f8a0995952a038b8aa0",
+    "calendar.csv": "d12b5914ef03e66649adf5dd9e996e6602251c22b7a6af8f1f7e3aa12f8860f5",
+    "sell_prices.csv": "9da3ad1f8b8ccacdbdc70612191dd375ec24a4ac6625c24b75b3bc60b0bed2ef"
+  },
+  "training_end": "2016-03-27",
+  "validation_start": "2016-03-28",
+  "validation_end": "2016-04-24",
+  "test_start": "2016-04-25",
+  "test_end": "2016-05-22",
+  "latest_730_training_start": "2014-03-29",
+  "candidates": 491,
+  "complete_training_price_candidates": 491,
+  "selected": 100,
+  "store_counts": {
+    "CA_1": 11,
+    "CA_2": 11,
+    "CA_3": 11,
+    "CA_4": 4,
+    "TX_1": 11,
+    "TX_2": 11,
+    "TX_3": 11,
+    "WI_1": 10,
+    "WI_2": 10,
+    "WI_3": 10
+  },
+  "department_counts": {
+    "HOUSEHOLD_1": 91,
+    "HOUSEHOLD_2": 9
+  },
+  "selection_rule": "Training-only: positive sales in first 730 training days, at least 80% positive days in latest 730 training days, full price coverage over the latest 730 training days. Up to ten per store, up to five per department, filling shortages within store; remaining places filled round-robin across stores. item_id ascending breaks ties."
+}

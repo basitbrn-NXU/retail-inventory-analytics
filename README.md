@@ -11,7 +11,10 @@ and evaluate inventory replenishment decisions.
 
 ## Initial scope
 Focus on 100 regularly selling household product-store histories.
-The final selection will use training data and check price coverage.
+The selected cohort is recorded in manifests/cohort_manifest.csv.
+Selection uses training data only, with price coverage checked over the
+latest 730 training days. Selection rules, source hashes, and split dates
+are recorded in manifests/cohort_audit.json.
 
 ## Data sources
 - sales_train_evaluation.csv
@@ -38,5 +41,18 @@ Python, JupyterLab, pandas, NumPy, scikit-learn, Streamlit, and Plotly.
 - manifests: data and model version records
 
 ## Current status
-Repository setup is in progress. Forecasting models and inventory
-simulations have not yet been implemented.
+The repository structure, data dictionary, Technical RAID log, architecture,
+and cohort selection records are available. Data preparation code,
+forecasting models, inventory simulations, and the dashboard are planned
+for the following course modules.
+
+## Project planning
+[GitHub project board](https://github.com/users/basitbrn-NXU/projects/1)
+
+## Documentation
+- [Technical RAID log and data dictionary](docs/Technical_RAID_and_Data_Dictionary.xlsx)
+- [Planned architecture](docs/architecture.png)
+- [Editable architecture diagram](docs/architecture.drawio)
+
+The architecture shows the planned workflow; referenced Python modules
+will be implemented in later assignments.
