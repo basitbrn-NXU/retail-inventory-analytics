@@ -2,6 +2,14 @@
 
 BAN6800 Data Analytics Capstone, Abdul Basit Sheikh, Nexford University.
 
+## Module submission versions — instructor navigation
+
+- **Module 2 grading version:** [fixed repository snapshot](https://github.com/basitbrn-NXU/retail-inventory-analytics/tree/2936b2a34d0c2fa8769b7feb97e20c2eee2bd6cb) · [named `module-2-submission` branch](https://github.com/basitbrn-NXU/retail-inventory-analytics/tree/module-2-submission).
+- **Module 3 work:** the current `main` branch includes later pipeline implementation. These additions should be reviewed for Module 3, separately from the Module 2 planning submission.
+- **All Module 3-related files:** [complete labeled file index](docs/module3/README.md), including shared files updated after Module 2.
+
+The Module 2 snapshot preserves the repository immediately before the Module 3 implementation commit. The fixed commit link remains tied to that exact version as development continues. The Module 2 report was submitted separately through the course portal.
+
 ## Purpose and scope
 Forecast retail sales and compare inventory replenishment scenarios using the
 Walmart M5 dataset. The fixed cohort contains 100 regularly selling household
