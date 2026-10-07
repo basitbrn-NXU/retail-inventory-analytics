@@ -1,0 +1,72 @@
+{
+  "run_id": "cdb40900-f668-4bae-b265-f7c894967392",
+  "source_sha256": {
+    "sales_train_evaluation.csv": "4b4a47c44c38380d2a9168216fea8c9ff2f31b1ddb772f8a0995952a038b8aa0",
+    "calendar.csv": "d12b5914ef03e66649adf5dd9e996e6602251c22b7a6af8f1f7e3aa12f8860f5",
+    "sell_prices.csv": "9da3ad1f8b8ccacdbdc70612191dd375ec24a4ac6625c24b75b3bc60b0bed2ef"
+  },
+  "source_checks": {
+    "source_series": 30490,
+    "missing_sales": 0,
+    "negative_sales": 0,
+    "noninteger_sales": 0
+  },
+  "code_commit": "uncommitted_local_working_copy",
+  "code_sha256": {
+    "src/__init__.py": "a269a90e724f33addfa82ee8157891b449e29103861d0d97f052b7a37ab8793e",
+    "src/validate.py": "bc347775ecd8f6ad25e84d4b2e18d4ffd41515bc0f48b61291164630e76b9ed0",
+    "src/bias.py": "52fec4693e09165d21445263bfa2be6cdf0cbd3e64558f30f2e129f0fc257912",
+    "src/prepare.py": "3edc8a38c663f007ceaa8f55206badab5384c4604fef56d9f9a01d0f49580c59",
+    "flows/__init__.py": "05eec0f62e3960cb55d61d8de87191e461ceed0de728feca73ba0c9386111801",
+    "flows/m5_pipeline.py": "268dbf2a02f3dbf1a524bbdb0c210df419b572942460037b646c3c0787fa4a53"
+  },
+  "output_rows": 78600,
+  "output_sha256": "2ef874771958b359766f1f10c10e146b230c3aa0041fcaca72baebc3e119dc58",
+  "splits": {
+    "test": 2800,
+    "train": 73000,
+    "validation": 2800
+  },
+  "date_range": [
+    "2014-03-29",
+    "2016-05-22"
+  ],
+  "missing_prices": 0,
+  "pii_columns_removed": [],
+  "validation": {
+    "evaluated_expectations": 12,
+    "successful_expectations": 12,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100.0
+  },
+  "bias_review_flags": [
+    "store_id CA_4: 4 selected series below review threshold 5",
+    "dept_id HOUSEHOLD_2: 9 selected series below review threshold 10"
+  ],
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "prefect": "3.8.8",
+    "great-expectations": "1.23.2",
+    "fairlearn": "0.14.0",
+    "pyarrow": "25.0.1"
+  },
+  "holdout_features": "Post-2016-03-27 actual sales excluded before lag/rolling calculation; future prices masked. Holdout labels are evaluation only. Module 4 must generate recursive/direct horizon inputs.",
+  "stages": [
+    "source verification",
+    "ingestion",
+    "integration",
+    "feature transformation",
+    "privacy screen",
+    "validation",
+    "bias review",
+    "local publication"
+  ],
+  "execution_environment": "Python 3.12 isolated environment in assistant workspace",
+  "docker_status": "Dockerfile provided; container build and run not executed",
+  "repeat_run_output_identical": true,
+  "pytest": {
+    "passed": 12,
+    "failed": 0
+  }
+}

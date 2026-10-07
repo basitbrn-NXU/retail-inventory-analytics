@@ -1,0 +1,9 @@
+data/
+*.zip
+*.xlsx
+*.pptx
+.git/
+.env
+.venv/
+__pycache__/
+docs/

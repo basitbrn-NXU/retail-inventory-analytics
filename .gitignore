@@ -1,14 +1,14 @@
-# Raw and processed datasets
+# Local datasets and generated detailed results
 data/*
 !data/README.md
 *.zip
-
-# Python temporary files
+# Python and development state
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
-
-# Local environments and credentials
+.pytest_cache/
 .venv/
 venv/
 .env
+# Local Prefect state
+.prefect/

@@ -1,12 +1,8 @@
 # Project documentation
 
-Available planning documents:
-- Technical_RAID_and_Data_Dictionary.xlsx: risk, assumption, issue, and dependency log, plus the data dictionary.
-- architecture.png: planned analytics architecture.
-- architecture.drawio: editable diagram source for diagrams.net.
+Module 2: Technical_RAID_and_Data_Dictionary.xlsx, architecture.png and architecture.drawio.
+Module 3: data_dictionary_module3.md, data_governance.md, run_pipeline.md and module3_evidence/.
 
-The diagram describes the planned system. Data preparation, forecasting,
-inventory simulation, and dashboard implementation follow in later modules.
-
-The Module 2 report is submitted through the course portal. AI disclosure
-is submitted separately from the report.
+Evidence contains aggregate run results and validation configuration, not raw sales
+or price records. Raw data, Parquet and detailed outputs remain local. The Dockerfile
+has not been executed in a container. Forecasting and inventory models follow in Module 4.

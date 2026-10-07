@@ -1,0 +1,114 @@
+{
+  "reference": "491 sales-eligible household series; price coverage confirmed in Module 2",
+  "thresholds": {
+    "minimum_selected_store_series": 5,
+    "minimum_selected_department_series": 10
+  },
+  "protected_group_fairness": "Not assessed; customer demographics absent",
+  "groups": {
+    "store_id": [
+      {
+        "group": "CA_1",
+        "candidate_count": 47,
+        "selected_count": 11,
+        "candidate_share": 0.09572301425661914,
+        "selected_share": 0.11,
+        "selection_rate": 0.23404255319148937
+      },
+      {
+        "group": "CA_2",
+        "candidate_count": 35,
+        "selected_count": 11,
+        "candidate_share": 0.07128309572301425,
+        "selected_share": 0.11,
+        "selection_rate": 0.3142857142857143
+      },
+      {
+        "group": "CA_3",
+        "candidate_count": 114,
+        "selected_count": 11,
+        "candidate_share": 0.23217922606924643,
+        "selected_share": 0.11,
+        "selection_rate": 0.09649122807017543
+      },
+      {
+        "group": "CA_4",
+        "candidate_count": 4,
+        "selected_count": 4,
+        "candidate_share": 0.008146639511201629,
+        "selected_share": 0.04,
+        "selection_rate": 1.0
+      },
+      {
+        "group": "TX_1",
+        "candidate_count": 55,
+        "selected_count": 11,
+        "candidate_share": 0.1120162932790224,
+        "selected_share": 0.11,
+        "selection_rate": 0.2
+      },
+      {
+        "group": "TX_2",
+        "candidate_count": 52,
+        "selected_count": 11,
+        "candidate_share": 0.10590631364562118,
+        "selected_share": 0.11,
+        "selection_rate": 0.21153846153846154
+      },
+      {
+        "group": "TX_3",
+        "candidate_count": 58,
+        "selected_count": 11,
+        "candidate_share": 0.11812627291242363,
+        "selected_share": 0.11,
+        "selection_rate": 0.1896551724137931
+      },
+      {
+        "group": "WI_1",
+        "candidate_count": 30,
+        "selected_count": 10,
+        "candidate_share": 0.06109979633401222,
+        "selected_share": 0.1,
+        "selection_rate": 0.3333333333333333
+      },
+      {
+        "group": "WI_2",
+        "candidate_count": 62,
+        "selected_count": 10,
+        "candidate_share": 0.12627291242362526,
+        "selected_share": 0.1,
+        "selection_rate": 0.16129032258064516
+      },
+      {
+        "group": "WI_3",
+        "candidate_count": 34,
+        "selected_count": 10,
+        "candidate_share": 0.06924643584521385,
+        "selected_share": 0.1,
+        "selection_rate": 0.29411764705882354
+      }
+    ],
+    "dept_id": [
+      {
+        "group": "HOUSEHOLD_1",
+        "candidate_count": 479,
+        "selected_count": 91,
+        "candidate_share": 0.9755600814663951,
+        "selected_share": 0.91,
+        "selection_rate": 0.18997912317327767
+      },
+      {
+        "group": "HOUSEHOLD_2",
+        "candidate_count": 12,
+        "selected_count": 9,
+        "candidate_share": 0.024439918533604887,
+        "selected_share": 0.09,
+        "selection_rate": 0.75
+      }
+    ]
+  },
+  "flags": [
+    "store_id CA_4: 4 selected series below review threshold 5",
+    "dept_id HOUSEHOLD_2: 9 selected series below review threshold 10"
+  ]
+}
