@@ -1,0 +1,14 @@
+# Raw and processed datasets
+data/*
+!data/README.md
+*.zip
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environments and credentials
+.venv/
+venv/
+.env
