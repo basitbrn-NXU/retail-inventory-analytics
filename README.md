@@ -25,9 +25,12 @@ representation using Fairlearn and publishes local Parquet with lineage.
 
 The executed output contains 78,600 records: 73,000 training, 2,800 validation
 and 2,800 test observations. Twelve GX expectations and twelve Pytest tests
-passed. Two complete runs produced matching Parquet hashes. These are results
-from the preparation workspace; learners should reproduce them locally.
-The Dockerfile is provided but its container build/run has not been executed.
+passed. Two complete runs produced matching Parquet hashes. The initial results came
+from the preparation workspace. On October 12, 2026, the learner also ran the
+pipeline in Windows/PyCharm and Docker Desktop. Docker image construction succeeded,
+12 container tests passed, and the full container run passed all 12 GX checks.
+Windows and Docker output Parquet SHA256 hashes match exactly. See
+[learner verification evidence](docs/module3_evidence/learner_verification_2026-10-12.json).
 Forecasting models, inventory simulation and the dashboard remain later work.
 
 ## Run and inspect

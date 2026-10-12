@@ -14,7 +14,7 @@ This index labels every file added or modified by the Module 3 implementation co
 | --- | --- | --- |
 | [`.dockerignore`](../../.dockerignore) | Module 3 addition | Module 3 container build exclusions |
 | [`.gitignore`](../../.gitignore) | Shared file updated in Module 3 | Shared repository exclusions updated for Module 3 local outputs |
-| [`Dockerfile`](../../Dockerfile) | Module 3 addition | Module 3 container definition; execution not yet verified |
+| [`Dockerfile`](../../Dockerfile) | Module 3 addition | Module 3 container definition; learner build and execution verified |
 | [`README.md`](../../README.md) | Shared file updated in Module 3 | Shared project overview and module navigation |
 | [`docs/README.md`](../../docs/README.md) | Shared file updated in Module 3 | Shared documentation index |
 | [`docs/data_dictionary_module3.md`](../../docs/data_dictionary_module3.md) | Module 3 addition | Module 3 prepared-output field definitions |
@@ -47,8 +47,8 @@ The following navigation documents were added or updated afterward to label the 
 
 The existing [cohort manifest](../../manifests/cohort_manifest.csv), [Technical RAID and input dictionary](../Technical_RAID_and_Data_Dictionary.xlsx), [architecture image](../architecture.png) and [editable architecture](../architecture.drawio) support continuity with Module 2. Their presence on main does not make them new Module 3 deliverables.
 
-## Evidence and remaining verification
+## Execution evidence
 
-The pipeline was executed on actual M5 inputs: 78,600 output records, 12 passing Great Expectations checks and 12 passing Python tests. Two complete runs produced matching Parquet hashes. Evidence is in [module3_evidence](../module3_evidence/). The Dockerfile is supplied, but its container build/run remains unverified. The PowerPoint is submitted separately through the course portal; it is not stored in this repository. Raw data and prepared Parquet remain local.
+The pipeline was executed on actual M5 inputs: 78,600 output records, 12 passing Great Expectations checks and 12 passing Python tests. Two complete runs produced matching Parquet hashes. Evidence is in [module3_evidence](../module3_evidence/). The learner subsequently verified the Docker build, all 12 container tests and the full pipeline on October 12, 2026. Windows/PyCharm and Docker Parquet hashes match. See [learner verification](../module3_evidence/learner_verification_2026-10-12.json). The PowerPoint is submitted separately through the course portal; it is not stored in this repository. Raw data and prepared Parquet remain local.
 
 Forecasting, explainability, inventory simulation and the dashboard are later-module work.

@@ -18,4 +18,4 @@ See the [complete Module 3 file inventory](module3/README.md) for all additions 
 - [Run and learning guide](run_pipeline.md)
 - [Executed aggregate evidence](module3_evidence/README.md)
 
-Raw data and Parquet outputs remain local. Docker execution is unverified. Forecasting and inventory models follow in Module 4.
+Raw data and Parquet outputs remain local. The learner verified Docker build, tests and full pipeline execution on October 12, 2026; see [verification evidence](module3_evidence/learner_verification_2026-10-12.json). Forecasting and inventory models follow in Module 4.

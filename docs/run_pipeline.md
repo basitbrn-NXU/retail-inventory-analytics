@@ -11,7 +11,7 @@ Open Anaconda Prompt. Change directory to the extracted repository root, where
 requirements.txt and the src and flows folders appear. For example:
 
 ```bat
-cd "C:\Users\ab_kb\Documents\University Assignments\BAN6800-DataAnalyticsCapstone\retail-inventory-analytics-main"
+cd "C:\Users\ab_kb\Documents\Studies - Nexford\University Assignments\BAN6800-DataAnalyticsCapstone\retail-inventory-analytics-main"
 conda create -n retail-m5 python=3.12 -y
 conda activate retail-m5
 python -m pip install -r requirements.txt
@@ -79,9 +79,12 @@ must construct recursive or direct multi-day model inputs without reading future
 actual sales. Optional calendar events are legitimately nullable. Zero sales are
 preserved and their cause remains unknown.
 
-## 6. Optional Docker reproduction
-The Dockerfile is provided, but Docker execution was not available in the preparation
-workspace. Install Docker Desktop only if you want to test container execution locally.
+## 6. Docker reproduction
+The learner verified Docker image construction, tests and the full pipeline on
+October 12, 2026. The Windows and Docker output hashes matched. Docker execution
+was unavailable in the original preparation workspace, so this later learner evidence
+is recorded separately in docs/module3_evidence/learner_verification_2026-10-12.json.
+Use Docker Desktop with the Linux engine to reproduce the container run.
 Build from the repository root:
 
 ```bat
@@ -102,3 +105,16 @@ Read slide speaker notes for the explanation behind each pipeline stage.
 Submit the 12-slide PowerPoint and the separately completed AI disclosure form;
 the deck links to the repository's DAG, suite, tests, Dockerfile and governance files.
 If local checks differ, record the discrepancy and correct it before claiming success.
+
+## 8. Compare Windows and Docker outputs
+Use separate data/processed and data/docker_processed folders so the two runs
+can be compared. In PowerShell at the repository root, after both runs:
+
+```powershell
+Get-FileHash ".\data\processed\prepared.parquet", ".\data\docker_processed\prepared.parquet" -Algorithm SHA256 | Format-List Path, Hash
+```
+
+The learner's October 12 comparison produced identical hashes:
+`2ef874771958b359766f1f10c10e146b230c3aa0041fcaca72baebc3e119dc58`.
+This confirms identical output bytes for those two executions. It does not prove
+future runs remain identical under all dependency or data changes.

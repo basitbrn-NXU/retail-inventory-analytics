@@ -37,7 +37,7 @@
     "evaluated_expectations": 12,
     "successful_expectations": 12,
     "unsuccessful_expectations": 0,
-    "success_percent": 100.0
+    "success_percent": 100
   },
   "bias_review_flags": [
     "store_id CA_4: 4 selected series below review threshold 5",
@@ -63,10 +63,11 @@
     "local publication"
   ],
   "execution_environment": "Python 3.12 isolated environment in assistant workspace",
-  "docker_status": "Dockerfile provided; container build and run not executed",
+  "docker_status": "Subsequently verified by learner on 2026-10-12: image build, 12 passing tests and full pipeline Completed; matching Windows/Docker output hashes",
   "repeat_run_output_identical": true,
   "pytest": {
     "passed": 12,
     "failed": 0
-  }
+  },
+  "learner_verification_evidence": "learner_verification_2026-10-12.json"
 }

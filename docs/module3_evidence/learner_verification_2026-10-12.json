@@ -1,0 +1,53 @@
+{
+  "module": 3,
+  "verification_date": "2026-10-12",
+  "timezone": "Africa/Nairobi",
+  "provenance": "Transcribed from console output supplied by the learner in the project conversation. The assistant did not directly access the learner PC or its local output files.",
+  "implementation_commit": "fb8cf244615e3521054a7c9cf4e7a4c3f4736ec5",
+  "windows": {
+    "interface": "PyCharm",
+    "python": "3.12.15",
+    "environment": "retail-m5",
+    "flow_run": "glossy-catfish",
+    "run_id": "f1305ae4-ec5f-44fa-967a-2b89b59b5560",
+    "exit_code": 0,
+    "pytest_passed": 12,
+    "pytest_seconds": 4.41,
+    "pytest_note": "Windows tests previously run in Anaconda Prompt on October 10; PyCharm pipeline run on October 12.",
+    "output_sha256": "2ef874771958b359766f1f10c10e146b230c3aa0041fcaca72baebc3e119dc58"
+  },
+  "docker": {
+    "engine_version": "29.8.2",
+    "context": "desktop-linux",
+    "platform": "Linux x86_64 via Docker Desktop / WSL2",
+    "build_succeeded": true,
+    "image_tag": "retail-m5:latest",
+    "base_image": "python:3.12-slim",
+    "base_image_digest": "sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1",
+    "pytest_passed": 12,
+    "pytest_seconds": 3.02,
+    "flow_run": "brave-rhino",
+    "run_id": "9fc4b272-33f5-48a4-a848-dffee10d96ce",
+    "pipeline_state": "Completed",
+    "input_mount_readonly": true,
+    "output_sha256": "2ef874771958b359766f1f10c10e146b230c3aa0041fcaca72baebc3e119dc58"
+  },
+  "output_rows": 78600,
+  "splits": {
+    "train": 73000,
+    "validation": 2800,
+    "test": 2800
+  },
+  "validation_per_pipeline_run": {
+    "evaluated_expectations": 12,
+    "successful_expectations": 12,
+    "unsuccessful_expectations": 0,
+    "success_percent": 100
+  },
+  "bias_review_flags": [
+    "store_id CA_4: 4 selected series below review threshold 5",
+    "dept_id HOUSEHOLD_2: 9 selected series below review threshold 10"
+  ],
+  "windows_docker_output_hashes_match": true,
+  "original_workspace_output_hash_also_matches": true
+}
