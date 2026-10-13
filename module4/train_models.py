@@ -120,6 +120,11 @@ def save_csv(frame, path):
     frame.to_csv(path,index=False)
     mlflow.log_artifact(str(path))
 
+def prediction_filename(run_name):
+    # MLflow adds run/artifact folders; keep filenames short for Windows MAX_PATH.
+    short_name = run_name.replace('gradient_boosting', 'gb').replace('random_forest', 'rf')
+    return f'{short_name}_pred.csv'
+
 def logged_fit(family, params, train, future, labels, phase, name, folder, data_hash):
     """Every fit begins inside a new MLflow run; fit order follows time."""
     with mlflow.start_run(run_name=name, nested=True, tags={'phase':phase,'algorithm':family}) as run:
@@ -136,7 +141,7 @@ def logged_fit(family, params, train, future, labels, phase, name, folder, data_
         metrics, joined=evaluate(pred,labels)
         mlflow.log_metrics(metrics)
         mlflow.sklearn.log_model(model, name='model', serialization_format='cloudpickle', signature=mlflow.models.infer_signature(x.head(5),model.predict(x.head(5))))
-        save_csv(joined,folder/f'{name}_predictions.csv')
+        save_csv(joined,folder/prediction_filename(name))
         print(f'  Finished {name}: MAE={metrics["mae"]:.4f}, RMSE={metrics["rmse"]:.4f}',flush=True)
         return model,metrics,joined,run.info.run_id
 
