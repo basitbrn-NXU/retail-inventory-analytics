@@ -12,6 +12,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from module4.setup_tracking import ROOT, EXPERIMENT, inspect_data
 from module4.train_models import features, TRAIN_END
+from module4.explain_model import reconstruct_inputs
 
 HISTORY_FEATURES=['lag_7','lag_28','rolling_mean_28']
 SCENARIOS=[('history',-.20),('history',-.10),('history',.10),('history',.20),
@@ -62,13 +63,15 @@ def run_analysis(parent,xai_run):
     digest=hashlib.sha256(model_path.read_bytes()).hexdigest()
     if meta['model_sha256']!=digest or meta['development_run_id']!=parent:raise ValueError('Explanation/model mismatch')
     model=joblib.load(model_path)
-    inputs=pd.read_csv(xai/'inputs.csv',parse_dates=['date'])
-    x=features(inputs)
     source=ROOT/'data/processed/prepared.parquet'
     readiness=inspect_data(source)
     data=pd.read_parquet(source);data['date']=pd.to_datetime(data.date)
     train=data[data.date<=TRAIN_END]
     saved=pd.read_csv(folder/'selected_validation_predictions.csv',parse_dates=['date'])
+    # Rebuild from the original Parquet/calendar rather than CSV-converted inputs.
+    # This preserves categorical values and floating-point precision at tree splits.
+    inputs=reconstruct_inputs(data,saved)
+    x=features(inputs)
     expected=inputs[['id','date']].merge(saved[['id','date','prediction']],on=['id','date'],validate='one_to_one').prediction.to_numpy()
     if not np.allclose(np.maximum(model.predict(x),0),expected,rtol=1e-6,atol=1e-6):raise ValueError('Baseline does not reproduce saved validation predictions')
     mlflow.set_tracking_uri('sqlite:///'+(ROOT/'tracking/mlflow.db').as_posix());mlflow.set_experiment(EXPERIMENT)
