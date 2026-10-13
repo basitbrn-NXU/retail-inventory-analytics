@@ -1,3 +1,4 @@
 -r requirements.txt
-# Tested setup/tracking dependency; modeling/XAI/API packages follow in later steps.
 mlflow==3.17.0
+-r module4/requirements-xai.txt
+-r module4/requirements-api.txt
