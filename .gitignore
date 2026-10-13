@@ -12,3 +12,9 @@ venv/
 .env
 # Local Prefect state
 .prefect/
+# Module 4 local experiment state and model artifacts
+tracking/
+mlruns/
+mlartifacts/
+mlflow.db*
+models/
