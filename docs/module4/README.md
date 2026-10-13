@@ -62,3 +62,9 @@ The fixed cohort was selected using the full Module 3 training interval; CV conc
 The script does not evaluate the final test period or claim demographic fairness. The best learned model is saved for later XAI even if the weekly baseline wins overall. See `validation_comparison.csv` and `selection.json` before selecting the next step. Actual MLflow model registration, final test evaluation, SHAP, counterfactuals, sensitivity, API and report remain later work.
 
 Verification: synthetic automated tests cover the seasonal baseline, mutation of forbidden future inputs, date-gap rejection and an end-to-end MLflow run with unavailable final test targets. These are software checks, not M5 performance results.
+
+### Frozen model final test
+
+After the validation choice is fixed, run `python -m module4.evaluate_test --parent-run DEVELOPMENT_RUN_ID`. This evaluates the saved validation winner without retraining or tuning. The final origin is April 24, 2016; actual training and validation sales are legitimate history at that origin. Predictions for April 25–May 22 are generated recursively before test labels are joined for scoring. Prices remain at their last available training value because Module 3 withheld later prices. This evaluates a frozen model fitted through March 27, not a newly refitted model.
+
+MLflow records a separate `frozen_model_final_test` run with the source development run, model/data hashes, forecast protocol, model and baseline metrics, predictions and store/department error summaries. Local outputs are under `models/module4/DEVELOPMENT_RUN_ID/test/`. Short artifact names avoid the observed Windows path-length issue. Existing test output blocks repeated evaluation: retain the first result and do not tune against this holdout. Accuracy and bias checks do not approve production deployment; explainability, group review, the Model Card and API remain outstanding.
