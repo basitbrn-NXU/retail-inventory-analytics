@@ -1,0 +1,30 @@
+{
+  "baseline_prediction": 9.807022918492294,
+  "desired_prediction_range": [
+    10.787725210341524,
+    11.768427502190752
+  ],
+  "permitted_history_scale": [
+    0.5,
+    1.2876712328767124
+  ],
+  "method": "DiCE random search",
+  "seed": 42,
+  "sample_size": 5000,
+  "found": false,
+  "reason": "DiCE found no solution within the declared range and search budget; target was not relaxed.",
+  "counterfactual_run_id": "a5683376804d4d95b469c0ba5a24094b",
+  "development_run_id": "2380b2054b204fff8f19fec80656d2cf",
+  "id": "HOUSEHOLD_1_004_CA_3_evaluation",
+  "date": "2016-03-28",
+  "model_sha256": "764e977a39487fd64fa374b32e2b79c78a811fdfe8178bbde663a91243fbcad7",
+  "fixed_inputs": "Product/store/department/state IDs, calendar, SNAP and price are unchanged.",
+  "history_rule": "Scale lag_7, lag_28 and rolling_mean_28 by the same factor, bounded by 0.5\u20131.5 and this series training min/max.",
+  "limitations": [
+    "Alternative history is an explanatory scenario, not actionable recourse; past sales cannot be changed.",
+    "Range constraints do not prove realistic customer behaviour or causal effects.",
+    "The DiCE interface grid represents hypothetical scale settings; no new model is fitted.",
+    "Finite random search does not guarantee global minimality or infeasibility when no solution is found.",
+    "No retuning or repeated final-test evaluation."
+  ]
+}
