@@ -1,0 +1,18 @@
+{
+  "health": {
+    "status": "ready",
+    "model": "BAN6800_M5_Household_Forecaster",
+    "version": "1",
+    "deployment_approved": false
+  },
+  "prediction": {
+    "request_id": "ed3582f5-ce5b-4585-a328-5e445e456b09",
+    "model": "BAN6800_M5_Household_Forecaster",
+    "version": "1",
+    "predictions": [
+      0.8481716946876521
+    ],
+    "unit": "daily sales units",
+    "deployment_approved": false
+  }
+}
