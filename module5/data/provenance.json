@@ -1,0 +1,22 @@
+{
+  "development_run_id": "2380b2054b204fff8f19fec80656d2cf",
+  "source_code_commit": "4022c9ad1998cef5294711cb40d2efe0d3d948b4",
+  "module4_api_source_sha256": "367a45e849cacb263fe71efa9416bb69fe2df1753c238254bb1a952e7001e1f4",
+  "api_reuse": "SalesRow, PredictRequest and create_app copied unchanged; only artifact loading differs.",
+  "model_refitted": false,
+  "new_final_test_forecasts": false,
+  "example_selection": "First validation-day row in CA_3/HOUSEHOLD_1, CA_4/HOUSEHOLD_1, WI_2/HOUSEHOLD_2; no accuracy-based filtering.",
+  "files": {
+    "registry.json": "03a80d8c3e965d3a01ca43f6016d2dccce69c86c9340069828747222152015c1",
+    "examples.json": "e9ff12a2550498dbbd49bd0bc945f38fe83db80a796ed61ab2abb8322eddea04",
+    "sensitivity.csv": "608bdf447ffeba782de7e288d2c5c8ec8d8308e2d16339f29dfa6514d74251ba",
+    "importance.csv": "ad06182988520f32808decd096f178662db2f5631db5719b526e5359597d5525",
+    "test_summary.json": "18f7661254b92851712919deeb4d85242a0f2d81a07058890df1e4d6c1dae490",
+    "counterfactual.json": "899fbd36fa796ad11e66401e3fccb2deeca0750c76a445caa03b7786875c3e99",
+    "test_predictions.csv": "a7c74ac569cd255b87183a3c0e032818c3ecc55a84dd70296d26580b8ff754fa",
+    "original_group_review.csv": "e0bafd7f5e431b9d945a82a131f1339c663f1a91b14b1361d5177185104bb480",
+    "baseline_predictions.csv": "0dae0f9ef51e5a1b0112858be0b223266896d9f7936d162beae23fe3ba7f04b5",
+    "selected_validation_model.joblib.b64": "bf62b045322e5c3586a58774a64b409166f71321dcd9fc8cd00655a8a53dff27"
+  },
+  "model_transport": "Base64 text wraps the original model bytes for repository transfer; decoded SHA-256 must match the original registered model."
+}
