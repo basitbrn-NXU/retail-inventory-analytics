@@ -1,0 +1,42 @@
+{
+  "model": "gradient_boosting",
+  "source_run_id": "6071f8e224d747778ba00793110161e8",
+  "development_run_id": "2380b2054b204fff8f19fec80656d2cf",
+  "model_sha256": "764e977a39487fd64fa374b32e2b79c78a811fdfe8178bbde663a91243fbcad7",
+  "data_sha256": "2ef874771958b359766f1f10c10e146b230c3aa0041fcaca72baebc3e119dc58",
+  "forecast_origin": "2016-04-24",
+  "test_start": "2016-04-25",
+  "test_end": "2016-05-22",
+  "horizon_days": 28,
+  "model_fit_end": "2016-03-27",
+  "refit": false,
+  "retuning": false,
+  "history_policy": "Observed training and validation sales available at forecast origin; future test sales excluded from prediction inputs.",
+  "price_policy": "Last available historical price carried forward; Module 3 withheld validation and test prices.",
+  "interpretation": "Frozen-model holdout evaluation, not a retraining or production deployment.",
+  "test_run_id": "67ae6bc37d424c38ad11b9a6f70636a1",
+  "test_rows": 2800,
+  "metrics": {
+    "mae": 2.3336864554583574,
+    "rmse": 3.401390194309817,
+    "r2": 0.4366857926970086,
+    "mean_signed_error": -0.05876339039224534,
+    "underprediction_rate": 0.43964285714285717,
+    "wape": 0.545618075758467,
+    "aggregate_bias_fraction": -0.013738935629449478
+  },
+  "baseline_metrics": {
+    "mae": 2.8657142857142857,
+    "rmse": 4.159069264012941,
+    "r2": 0.15777117672461682,
+    "mean_signed_error": -0.14714285714285713,
+    "underprediction_rate": 0.43142857142857144,
+    "wape": 0.6700066800267201,
+    "aggregate_bias_fraction": -0.03440213760855043
+  },
+  "relative_rmse_improvement": 0.18217515064225354,
+  "final_test_evaluated": true,
+  "passes_accuracy_and_bias_targets": true,
+  "deployment_approved": false,
+  "remaining": "Explainability, sensitivity/counterfactual analysis, group review, Model Card, registry and API."
+}
