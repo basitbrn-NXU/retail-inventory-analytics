@@ -1,0 +1,113 @@
+[
+  {
+    "id": "HOUSEHOLD_1_004_CA_3_evaluation",
+    "date": "2016-03-28",
+    "inputs": {
+      "item_id": "HOUSEHOLD_1_004",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA",
+      "event_name_1": "No_event",
+      "event_name_2": "No_event",
+      "wday": 3,
+      "month": 3,
+      "snap": 0,
+      "lag_7": 8.0,
+      "lag_28": 22.0,
+      "rolling_mean_28": 10.428571428571429,
+      "historical_sell_price": 2.36
+    },
+    "prediction": 9.807022918492294,
+    "actual_units": 6,
+    "base_value": 4.355510361461693,
+    "shap": {
+      "item_id": 0.09420495011549937,
+      "store_id": 0.08846752570477974,
+      "dept_id": 0.0048137939893667355,
+      "state_id": 0.0072774699019239495,
+      "event_name_1": 0.025038301183968315,
+      "event_name_2": 8.566048478222183e-05,
+      "wday": -0.1556625071748406,
+      "month": -0.054728255357105106,
+      "snap": -0.0653814066789729,
+      "lag_7": 0.02735315692906169,
+      "lag_28": 0.15842211622355593,
+      "rolling_mean_28": 5.344865466065995,
+      "historical_sell_price": -0.02324371435739787
+    }
+  },
+  {
+    "id": "HOUSEHOLD_1_151_CA_4_evaluation",
+    "date": "2016-03-28",
+    "inputs": {
+      "item_id": "HOUSEHOLD_1_151",
+      "store_id": "CA_4",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA",
+      "event_name_1": "No_event",
+      "event_name_2": "No_event",
+      "wday": 3,
+      "month": 3,
+      "snap": 0,
+      "lag_7": 4.0,
+      "lag_28": 2.0,
+      "rolling_mean_28": 4.785714285714286,
+      "historical_sell_price": 0.88
+    },
+    "prediction": 4.378451764578322,
+    "actual_units": 3,
+    "base_value": 4.355510361461693,
+    "shap": {
+      "item_id": -0.05692405009289838,
+      "store_id": 0.0033326926011450144,
+      "dept_id": 0.0048137939893667355,
+      "state_id": -0.002642765589024907,
+      "event_name_1": 0.021984942174397157,
+      "event_name_2": 8.566048478222183e-05,
+      "wday": -0.17459295327459223,
+      "month": -0.007171150784303414,
+      "snap": -0.033959727998988457,
+      "lag_7": -0.04483438460996231,
+      "lag_28": -0.06647316665630039,
+      "rolling_mean_28": 0.3413106137613147,
+      "historical_sell_price": 0.03801189911169463
+    }
+  },
+  {
+    "id": "HOUSEHOLD_2_342_WI_2_evaluation",
+    "date": "2016-03-28",
+    "inputs": {
+      "item_id": "HOUSEHOLD_2_342",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "WI",
+      "event_name_1": "No_event",
+      "event_name_2": "No_event",
+      "wday": 3,
+      "month": 3,
+      "snap": 0,
+      "lag_7": 8.0,
+      "lag_28": 11.0,
+      "rolling_mean_28": 7.428571428571429,
+      "historical_sell_price": 0.97
+    },
+    "prediction": 6.697284511361627,
+    "actual_units": 2,
+    "base_value": 4.355510361461693,
+    "shap": {
+      "item_id": -0.061835425252467616,
+      "store_id": -0.18626059667379477,
+      "dept_id": -0.021858146063556134,
+      "state_id": -0.024540797288561348,
+      "event_name_1": 0.03232099480542563,
+      "event_name_2": 8.566048478222183e-05,
+      "wday": -0.2657903480689015,
+      "month": -0.014300258452344053,
+      "snap": -0.05089610168902979,
+      "lag_7": 0.13947252783433262,
+      "lag_28": 0.04764761184765824,
+      "rolling_mean_28": 2.7277770680887685,
+      "historical_sell_price": 0.0199519603276273
+    }
+  }
+]
