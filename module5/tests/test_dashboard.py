@@ -16,8 +16,13 @@ def frozen():
     return load_model()
 
 def test_assets_match_source_hashes():
+    # Hashes were recorded on Windows (CRLF); Git stores text files with LF.
+    # Accept either line ending so the check verifies content, not checkout settings.
     for name,digest in read_json("provenance.json")["files"].items():
-        assert hashlib.sha256((DATA/name).read_bytes()).hexdigest()==digest
+        raw=(DATA/name).read_bytes()
+        lf=raw.replace(b"\r\n",b"\n")
+        candidates={hashlib.sha256(b).hexdigest() for b in (raw,lf,lf.replace(b"\n",b"\r\n"))}
+        assert digest in candidates, name
 
 def test_frozen_test_metrics_match_module4():
     frame=load_test();summary=read_json("test_summary.json")
