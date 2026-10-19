@@ -1,4 +1,20 @@
-# Module 4: experiment setup
+# Module 4: modeling and evaluation
+
+## Instructor entry point
+
+The modeling source is on the `module-4-development` branch. The default `main` branch preserves the earlier pipeline and now links here.
+
+- [Training, chronological CV and validation](../../module4/train_models.py)
+- [Frozen final-test evaluation and baseline comparison](../../module4/evaluate_test.py)
+- [SHAP explanations](../../module4/explain_model.py)
+- [Sensitivity analysis](../../module4/sensitivity.py)
+- [Counterfactual search](../../module4/counterfactual.py)
+
+Archived final-test results in the submitted report: gradient boosting MAE 2.3337, RMSE 3.4014, R² 0.4367 and WAPE 54.56%; weekly-baseline MAE 2.8657, RMSE 4.1591 and WAPE 67.00%. The local development run was `2380b2054b204fff8f19fec80656d2cf`. Files under `models/`, the prepared dataset and the MLflow database remain local and ignored.
+
+For a fresh reproduction, use this branch, install `requirements-module4.txt`, supply the verified Module 3 Parquet, and run setup followed by `python -m module4.train_models`. The training command prints a **new** development run ID. Pass that ID to `python -m module4.evaluate_test --parent-run NEW_RUN_ID`. Training a fresh run can produce environment-dependent floating-point differences. Do not overwrite or retune the archived final-test result.
+
+The sections below document the staged development sequence. Statements that a later stage was pending describe that earlier stage; the linked modeling, test, explanation and API code is now present.
 
 ## Scope and instructor clarification
 
