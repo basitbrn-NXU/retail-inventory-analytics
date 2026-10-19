@@ -1,0 +1,638 @@
+{
+  "registered_model_name": "BAN6800_M5_Household_Forecaster",
+  "version": "1",
+  "alias": "candidate",
+  "registry_uri": "models:/BAN6800_M5_Household_Forecaster/1",
+  "logged_model_uri": "models:/m-93bfd2af5ebe464ca2d64eefc45006e6",
+  "model_sha256": "764e977a39487fd64fa374b32e2b79c78a811fdfe8178bbde663a91243fbcad7",
+  "data_sha256": "2ef874771958b359766f1f10c10e146b230c3aa0041fcaca72baebc3e119dc58",
+  "development_run_id": "2380b2054b204fff8f19fec80656d2cf",
+  "registration_run_id": "9ef0d19a2f534dd2bf97dbee19a60f82",
+  "documentation_run_id": "e59025e0508641f18c58845638ecb4ec",
+  "lifecycle_status": "academic_candidate",
+  "deployment_approved": false,
+  "example_request": {
+    "rows": [
+      {
+        "item_id": "HOUSEHOLD_1_004",
+        "store_id": "CA_3",
+        "dept_id": "HOUSEHOLD_1",
+        "state_id": "CA",
+        "event_name_1": "No_event",
+        "event_name_2": "No_event",
+        "wday": 1,
+        "month": 3,
+        "snap": 0,
+        "lag_7": 0.0,
+        "lag_28": 0.0,
+        "rolling_mean_28": 0.0,
+        "historical_sell_price": 2.37
+      }
+    ]
+  },
+  "example_prediction": 0.8481716946876521,
+  "cohort_combinations": [
+    {
+      "item_id": "HOUSEHOLD_1_004",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_007",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_007",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_019",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_025",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_027",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_027",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_027",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_027",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_027",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_027",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_030",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_038",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_038",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_040",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_045",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_048",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_051",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_055",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_055",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_055",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_066",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_066",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_066",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_066",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_071",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_071",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_071",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_071",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_071",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_072",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_075",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_079",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_083",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_083",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_083",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_083",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_083",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_090",
+      "store_id": "CA_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_090",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_090",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_090",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_096",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_096",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_096",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_107",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_110",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_110",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_110",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_110",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_110",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_118",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_118",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_118",
+      "store_id": "TX_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_118",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_142",
+      "store_id": "TX_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_151",
+      "store_id": "CA_4",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_151",
+      "store_id": "WI_3",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_173",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_194",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_198",
+      "store_id": "WI_1",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_294",
+      "store_id": "CA_4",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_1_517",
+      "store_id": "CA_4",
+      "dept_id": "HOUSEHOLD_1",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_115",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_160",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_176",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_176",
+      "store_id": "CA_4",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_342",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_342",
+      "store_id": "TX_3",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "TX"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_342",
+      "store_id": "WI_2",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "WI"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_350",
+      "store_id": "CA_3",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    },
+    {
+      "item_id": "HOUSEHOLD_2_483",
+      "store_id": "CA_2",
+      "dept_id": "HOUSEHOLD_2",
+      "state_id": "CA"
+    }
+  ],
+  "api_scope": "One-day prediction from supplied historical features; a full 28-day forecast requires the recursive forecasting routine.",
+  "stage_mapping": "MLflow aliases and lifecycle tags replace deprecated legacy stages. Candidate is for academic validation, not Production."
+}
