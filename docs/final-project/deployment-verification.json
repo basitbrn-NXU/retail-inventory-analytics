@@ -3,7 +3,7 @@
   "provider": "Render Free",
   "service_url": "https://ban6800-retail-api.onrender.com",
   "branch": "final-project",
-  "deployed_commit": "e0f7641767bfc2e7c81439259cae9d39dd947995",
+  "deployed_commit": "f3bf8fbd17937a52ad03a9e7b3397068a5d15ad8",
   "build_tests": {
     "passed": 5,
     "seconds": 1.64,
@@ -43,5 +43,17 @@
       "Running Grafana health endpoint",
       "Monitoring JSON endpoint"
     ]
+  },
+  "initial_deployed_commit": "e0f7641767bfc2e7c81439259cae9d39dd947995",
+  "latest_release_live_at_utc": "2026-10-24T05:08:18Z",
+  "latest_release_build_tests": {
+    "passed": 5,
+    "seconds": 1.57
+  },
+  "latest_monitoring_view_verified": {
+    "successful_prediction_rows": 0,
+    "input_drift_label": "Waiting for 100 rows",
+    "explanation": "Runtime counters reset on the verified redeployment."
   }
 }
+
