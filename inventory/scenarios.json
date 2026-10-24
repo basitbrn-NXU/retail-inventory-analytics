@@ -1,0 +1,29 @@
+{
+  "analysis_type": "Exploratory policy comparison on the existing frozen 28-day test window; not a new untouched evaluation",
+  "review_period_days": 7,
+  "lead_times_days": [3, 7, 14],
+  "holding_cost_per_unit_day": 1.0,
+  "shortage_penalties_per_unmet_unit": [5.0, 20.0, 50.0],
+  "safety_multipliers": [0.0, 1.645],
+  "demand_multipliers": [1.0, 1.2],
+  "stress_units": "Scaled stress demand is measured in continuous unit-equivalents; it is an assumed demand-proxy sensitivity, not observed item transactions",
+  "base_case": {
+    "lead_time_days": 7,
+    "shortage_penalty_per_unmet_unit": 20.0,
+    "safety_multiplier": 1.645,
+    "demand_multiplier": 1.0
+  },
+  "inventory_policy": "Weekly order up to forecast sales over lead time plus seven-day review period, plus a common history-based safety buffer",
+  "comparison_policy": "Weekly order up to fixed trailing 28-day historical mean times protection period, plus the same safety buffer",
+  "safety_buffer": "multiplier times trailing 28-day daily-sales sample standard deviation times square root of protection days; heuristic, not a validated 95 percent interval",
+  "initial_stock": "Both policies start with the same rounded-up historical-average protection stock plus safety buffer",
+  "initial_open_orders": 0,
+  "capacity": "Unconstrained because storage capacity is unobserved",
+  "events": "Receive due orders, review/place order if scheduled, fulfil daily scenario demand, charge ending on-hand holding cost and unmet-demand penalty",
+  "unmet_demand": "Lost sales; no backorders",
+  "forecast_extension": "Beyond the saved 28 days, repeat the final predicted week solely for protection-window targets; never use future observed sales",
+  "cost_units": "Assumed scenario cost units, not currency, acquisition costs or demonstrated business savings",
+  "terminal_stock": "Report ending on-hand and pipeline stock separately; no assumed salvage value or terminal acquisition charge",
+  "targets": {"cost_reduction_fraction": 0.05, "unit_fill_rate": 0.95, "maximum_store_fill_rate_gap": 0.05}
+}
+
