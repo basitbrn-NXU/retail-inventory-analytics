@@ -36,3 +36,7 @@ Render. (n.d.). Deploy a FastAPI app. https://render.com/docs/deploy-fastapi
 Render. (n.d.). Deploy for free. https://render.com/docs/free
 
 The primary project evidence is the existing Module 1 and 2 documents, Module 3 quality and bias records, Module 4 model validation report and artifacts, Module 5 presentation and dashboard, and the repository source. References for the integrated analytical and regulatory discussion will be verified during report preparation.
+
+## Inventory analysis added after deployment
+
+The assistant subsequently implemented the previously planned inventory-policy comparison. Scenario assumptions were saved before execution; the 36 paired scenarios retained the frozen forecasts and did not tune a new policy from the outcomes. Five accounting and timing tests passed. The seven-day base case failed the original cost, fill-rate and store-gap targets, and these failures were preserved in the report evidence. The existing test outcomes were already known, so the analysis is explicitly exploratory. All stock, cost, lead-time, safety and additional-demand quantities are assumptions; no actual savings or stockouts are claimed.
