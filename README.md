@@ -1,77 +1,97 @@
 # Retail Sales Forecasting and Inventory Replenishment Planning
 
-BAN6800 Data Analytics Capstone, Abdul Basit Sheikh, Nexford University.
+BAN6800 Data Analytics Capstone · Abdul Basit Sheikh · Nexford University.
 
-## Module submission versions — instructor navigation
+The `final-project` branch brings together the Module 3 pipeline, Module 4 forecasting and explainability source, Module 5 stakeholder dashboard, and the final-project API and monitoring service. Earlier submission branches retain their own histories. This is an academic decision-support prototype for 100 household product–store combinations across ten Walmart stores. It does not place stock orders or represent an authorized Walmart implementation.
 
-- **Module 2 grading version:** [fixed repository snapshot](https://github.com/basitbrn-NXU/retail-inventory-analytics/tree/2936b2a34d0c2fa8769b7feb97e20c2eee2bd6cb) · [named `module-2-submission` branch](https://github.com/basitbrn-NXU/retail-inventory-analytics/tree/module-2-submission).
-- **Module 3 work:** the current `main` branch includes later pipeline implementation. These additions should be reviewed for Module 3, separately from the Module 2 planning submission.
-- **All Module 3-related files:** [complete labeled file index](docs/module3/README.md), including shared files updated after Module 2.
+## Live demonstrations
 
-The Module 2 snapshot preserves the repository immediately before the Module 3 implementation commit. The fixed commit link remains tied to that exact version as development continues. The Module 2 report was submitted separately through the course portal.
+| Component | URL |
+| --- | --- |
+| Stakeholder and SHAP dashboard | https://retail-inventory-analytics-6xymcccu2rnbc9r3zxzdf9.streamlit.app/ |
+| Public API documentation | https://ban6800-retail-api.onrender.com/docs |
+| Public prediction endpoint | POST https://ban6800-retail-api.onrender.com/predict |
+| Monitoring dashboard | https://ban6800-retail-api.onrender.com/monitoring |
+| Prometheus exposition | https://ban6800-retail-api.onrender.com/metrics |
 
-## Purpose and scope
-Forecast retail sales and compare inventory replenishment scenarios using the
-Walmart M5 dataset. The fixed cohort contains 100 regularly selling household
-product-store histories across ten stores. Source data remains local and is
-excluded from public GitHub. Zero sales retain an unknown cause. Inventory
-levels, lead times and costs are scenario inputs, so actual savings are not claimed.
+The Streamlit application remains deployed from `module-5-dashboard`. The API is deployed from `final-project`. Both use the same frozen Module 4 model hash, `764e977a39487fd64fa374b32e2b79c78a811fdfe8178bbde663a91243fbcad7`. The API example reproduces 0.8481716946876521 daily sales units. Free Render hosting sleeps when idle and runtime telemetry resets after restarts. The model's production approval remains false.
 
-## Module 3 implementation
-The Prefect workflow in flows/m5_pipeline.py verifies source hashes, validates
-raw inputs, joins daily sales/calendar/weekly prices, creates chronological
-features, screens for PII, executes a Great Expectations suite, assesses
-representation using Fairlearn and publishes local Parquet with lineage.
+## Find the code and evidence
 
-The executed output contains 78,600 records: 73,000 training, 2,800 validation
-and 2,800 test observations. Twelve GX expectations and twelve Pytest tests
-passed. Two complete runs produced matching Parquet hashes. The initial results came
-from the preparation workspace. On October 12, 2026, the learner also ran the
-pipeline in Windows/PyCharm and Docker Desktop. Docker image construction succeeded,
-12 container tests passed, and the full container run passed all 12 GX checks.
-Windows and Docker output Parquet SHA256 hashes match exactly. See
-[learner verification evidence](docs/module3_evidence/learner_verification_2026-10-12.json).
-Forecasting models, inventory simulation and the dashboard remain later work.
+| Component | Entry point |
+| --- | --- |
+| Pipeline and quality checks | `flows/m5_pipeline.py`, `src/`, `tests/` |
+| Cohort and chronology | `manifests/`, `docs/data_dictionary_module3.md` |
+| Governance and pipeline bias | `docs/data_governance.md`, `docs/module3_evidence/` |
+| Training and chronological validation | `module4/train_models.py` |
+| Frozen final test | `module4/evaluate_test.py` |
+| SHAP and sensitivity | `module4/explain_model.py`, `module4/sensitivity.py` |
+| Counterfactual null result | `module4/counterfactual.py` |
+| Model Card and group review generation | `module4/review.py` |
+| Tracking and registry | `module4/setup_tracking.py`, `module4/register_model.py` |
+| Original local registered-model API | `module4/api.py` |
+| Stakeholder and XAI views | `module5/app.py`, `module5/core.py` |
+| Public serving and monitoring | `deployment/cloud_api.py`, `deployment/README.md` |
+| CI | `.github/workflows/final-project.yml` |
+| Containers | `compose.yaml`, `Dockerfile`, `deployment/Dockerfile` |
+| Integration audit and deployment evidence | `docs/final-project/` |
 
-## Run and inspect
-[Step-by-step Anaconda and Docker guide](docs/run_pipeline.md)
+## Setup
+
+Use separate Python 3.12 environments for the pipeline, modeling and dashboard/deployment requirements. Do not install all phase-specific dependency files into one existing working environment.
+
+Pipeline:
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pytest -q
+pip install -r requirements.txt
+python -m pytest tests -q
 python -m flows.m5_pipeline --source /absolute/path/m5-forecasting-accuracy.zip
 ```
 
-requirements.txt pins the tested pipeline packages. Future dashboard dependencies
-will be added and tested during the later module. Prefect runs locally without a
-cloud account. The pipeline outputs live under data/processed/ and stay outside Git.
+Modeling: follow `docs/module4/README.md` and use `requirements-module4.txt`. The source archive and prepared data remain local. Fresh MLflow runs receive new IDs; pass the generated parent run ID to subsequent commands.
 
-## Data and leakage safeguards
-Source CSVs: sales_train_evaluation.csv, calendar.csv, sell_prices.csv.
-The cohort manifest and audit use training data only. Training covers March 29,
-2014 to March 27, 2016, validation March 28 to April 24 and test April 25 to May 22.
-All post-training actual sales are masked before computing historical features;
-held-out actual selling prices are excluded. Some holdout features are therefore
-intentionally null. Module 4 must build direct or recursive horizon inputs without
-future actual sales. Labels in the prepared table are for evaluation, not predictors.
+Public API and monitoring:
 
-## Documentation and evidence
-- [Module 2 Technical RAID and input dictionary](docs/Technical_RAID_and_Data_Dictionary.xlsx)
-- [Module 3 output dictionary](docs/data_dictionary_module3.md)
-- [Governance and anonymization plan](docs/data_governance.md)
-- [Executed aggregate evidence](docs/module3_evidence/)
-- [Learner notebook walkthrough](notebooks/module3_walkthrough.ipynb)
-- [Module 2 architecture diagram](docs/architecture.png)
-- [GitHub project board](https://github.com/users/basitbrn-NXU/projects/1)
+```bash
+pip install -r deployment/requirements.txt
+python -m pytest deployment/test_cloud_api.py -q
+uvicorn deployment.cloud_api:app --host 127.0.0.1 --port 8000 --workers 1
+```
 
-## Repository structure
-- flows/: Prefect orchestration
-- src/: preparation, Great Expectations validation and bias checks
-- tests/: Pytest processing and rejection tests
-- data/: source documentation; raw/prepared records remain local
-- manifests/: cohort identifiers, selection rules and source hashes
-- notebooks/: learner inspection walkthrough
-- app/: planned dashboard
-- docs/: architecture, RAID, dictionaries, governance and aggregate evidence
+Dashboard:
 
-The course presentation is submitted through the course portal. Code and aggregate evidence are accessible in this public repository.
+```bash
+pip install -r module5/requirements.txt
+streamlit run module5/app.py
+```
+
+## Multi-container monitoring
+
+Set `GRAFANA_ADMIN_PASSWORD` to a password of your choice before starting. In PowerShell, set it in the current terminal with `$env:GRAFANA_ADMIN_PASSWORD = 'your-chosen-password'`.
+
+```bash
+docker compose up --build -d api prometheus grafana
+```
+
+Open API/monitoring at localhost:8000, Prometheus at localhost:9090 and Grafana at localhost:3000. Grafana provisions the Retail API dashboard automatically. Its administrator username is `admin`. Local Prometheus data uses a named volume with a 30-day retention setting. Runtime API counters can reset while Prometheus retains prior scrapes.
+
+For the optional pipeline container, set `M5_SOURCE_DIR` to the folder containing the locally obtained Kaggle ZIP. Then run `docker compose --profile prepare run --rm pipeline`. Raw source is mounted read-only; prepared output goes to a local Docker volume. No raw dataset is added to the public repository.
+
+## Evidence and boundaries
+
+The pipeline produced 78,600 records: 73,000 training, 2,800 validation and 2,800 final-test rows. The original Module 3 evidence records twelve tests and twelve quality expectations. Training ends 27 March 2016; validation ends 24 April; the final test ends 22 May. Recursive forecasts exclude future observed sales; historical price is carried forward.
+
+The frozen gradient boosting model has final-test MAE 2.3337, RMSE 3.4014 and WAPE 54.56%, compared with baseline WAPE 67.00%. Overall bias is −1.37%, but HOUSEHOLD_2 underprediction is −32.23%. Store and department checks are operational equity diagnostics. Customer demographic fairness is unassessed. No post-test correction or promotion is applied.
+
+Inventory cost savings, 95% simulated fill rate, uncertainty coverage and store service gaps remain untested at this integration milestone. New performance and bias drift require observed future labels. The monitoring page separates these missing outcomes from historical scores and live input/activity checks. Automatic deployment is not enabled yet; passing CI currently verifies tests and container construction.
+
+## Instructor navigation
+
+- Module 2: `module-2-submission` and fixed commit `2936b2a34d0c2fa8769b7feb97e20c2eee2bd6cb`.
+- Module 3: `module-3-submission` and `docs/module3/README.md`.
+- Module 4: `module-4-development` and `docs/module4/README.md`.
+- Module 5: `module-5-dashboard` and `module5/README.md`.
+- Final integration: `final-project`.
+- Project board: https://github.com/users/basitbrn-NXU/projects/1.
+
+The final report and AI disclosure are submitted through the course portal. Completion of those documents is tracked in the integration audit.
