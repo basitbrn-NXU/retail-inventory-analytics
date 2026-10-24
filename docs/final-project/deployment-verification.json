@@ -25,8 +25,23 @@
   "deployment_approved": false,
   "boundaries": [
     "Academic public demonstration, not an operational rollout",
-    "Local Docker engine inaccessible to agent; Compose configuration validation passed, multi-container execution not yet verified",
+    "Local Docker engine inaccessible to agent; full API, Prometheus and Grafana Compose execution verified by GitHub Actions on Linux.",
     "Automated deployment not enabled",
     "Counters and audit metadata reset on free hosting restarts; no durable cloud history"
-  ]
+  ],
+  "ci": {
+    "workflow_run_url": "https://github.com/basitbrn-NXU/retail-inventory-analytics/actions/runs/40064799431",
+    "tested_commit": "fb259b17b4e4607aa42d52f61097df13471fa606",
+    "status": "success",
+    "duration": "1m 58s",
+    "checks": [
+      "API integration tests",
+      "Docker image build",
+      "Compose configuration",
+      "Running API health endpoint",
+      "Running Prometheus readiness endpoint",
+      "Running Grafana health endpoint",
+      "Monitoring JSON endpoint"
+    ]
+  }
 }
