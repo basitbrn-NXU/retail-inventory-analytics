@@ -140,12 +140,17 @@ def monitoring_page():
     state = monitoring_data()
     runtime = state["runtime"]
     drift = state["feature_drift"]
+    drift_labels = {"insufficient_live_support": "Waiting for 100 rows", "review": "Review input change",
+                    "within_review_threshold": "Within review threshold", "reference_not_configured": "Reference unavailable"}
+    last_prediction = runtime["last_prediction_at_utc"]
+    last_label = datetime.fromisoformat(last_prediction).strftime("%d %b %Y %H:%M:%S") if last_prediction else "None since startup"
     cards = [("Successful prediction rows", runtime["successful_prediction_rows"]),
-             ("Last prediction UTC", runtime["last_prediction_at_utc"] or "None since startup"),
-             ("Input drift", drift["status"])]
+             ("Last prediction UTC", last_label),
+             ("Input drift", drift_labels[drift["status"]])]
     tiles = "".join(f"<article><span>{escape(k)}</span><strong>{escape(str(v))}</strong></article>" for k, v in cards)
     status_rows = [{"HTTP status": k, "Requests": v} for k, v in runtime["request_status_counts"].items()]
     drift_rows = [{"Feature": k, "PSI": round(v["psi"], 4), "Review": v["review"]} for k, v in drift.get("features", {}).items()]
+    drift_table = html_table(drift_rows) if drift_rows else f"<p>{drift.get('window_rows', 0)} accepted rows in the current window. Drift results appear after 100 rows.</p>"
     groups = []
     for dimension, values in historical_groups.items():
         for r in values:
@@ -161,7 +166,7 @@ h1{font-size:32px}h2{margin-top:34px}.cards{display:flex;gap:16px;flex-wrap:wrap
 <div class="notice">Live input monitoring is separate from the historical evaluation below. New accuracy and group-bias outcomes cannot be measured until observed sales labels arrive.</div>
 <h2>Live API activity since startup</h2><div class="cards">""" + tiles + "</div>" + html_table(status_rows) + \
         f"<p>Process started UTC: {escape(started_at)}. Refresh this page for current values.</p>" + \
-        "<h2>Live input distribution</h2><p>Training-only reference. Minimum 100 accepted rows; rolling window up to 1,000 rows. PSI above 0.20 triggers review, not automatic retraining. Scenario queries may change the input mix.</p>" + html_table(drift_rows) + \
+        "<h2>Live input distribution</h2><p>Training-only reference. Minimum 100 accepted rows; rolling window up to 1,000 rows. PSI above 0.20 triggers review, not automatic retraining. Scenario queries may change the input mix.</p>" + drift_table + \
         "<h2>Historical accuracy reference</h2><p>Frozen final test, 25 April to 22 May 2016, 2,800 rows. MAE 2.3337 units; RMSE 3.4014 units; WAPE 54.56%; aggregate bias −1.37%. These are historical evaluation results.</p>" + \
         "<h2>Historical operational equity review</h2><p>Absolute group bias above 10% triggers review. CA_4 and HOUSEHOLD_2 have limited cohort support. Demographic parity, equalized odds and disparate impact are unassessed because customer demographics and a binary decision are absent.</p><div class='scroll'>" + html_table(groups) + "</div>" + \
         f"<h2>Provenance and retention</h2><p>Model SHA-256: <code>{manifest['model_sha256']}</code></p><p>{escape(state['retention'])}</p><p>No orders are placed. Production approval remains false.</p></main></html>"
