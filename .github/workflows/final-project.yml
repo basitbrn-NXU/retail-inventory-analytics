@@ -37,9 +37,9 @@ jobs:
         run: docker compose up --build -d api prometheus grafana
       - name: Verify running services
         run: |
-          curl --retry 30 --retry-delay 2 --retry-connrefused -fsS http://localhost:8000/health
-          curl --retry 30 --retry-delay 2 --retry-connrefused -fsS http://localhost:9090/-/ready
-          curl --retry 30 --retry-delay 2 --retry-connrefused -fsS http://localhost:3000/api/health
+          curl --retry 30 --retry-all-errors --retry-delay 2 --max-time 5 -fsS http://localhost:8000/health
+          curl --retry 30 --retry-all-errors --retry-delay 2 --max-time 5 -fsS http://localhost:9090/-/ready
+          curl --retry 30 --retry-all-errors --retry-delay 2 --max-time 5 -fsS http://localhost:3000/api/health
           curl -fsS http://localhost:8000/monitoring/data
       - name: Stop CI containers
         if: always()
