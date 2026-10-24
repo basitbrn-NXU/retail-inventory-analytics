@@ -4,7 +4,7 @@ Audit date: 24 October 2026. This audit records the current evidence boundary be
 
 | Seam | Evidence and reconciliation | Remaining work |
 | --- | --- | --- |
-| Business goals to model scores | Original 10% relative WAPE target is met by the frozen evaluation. Better accuracy does not establish inventory savings. | Assess the original inventory cost, fill-rate and service-gap targets using declared scenario assumptions. |
+| Business goals to model scores | Original 10% relative WAPE target is met by the frozen evaluation. Better accuracy does not establish inventory savings. | Exploratory inventory comparison completed in `inventory/README.md`: all three base-case targets unmet. Obtain operational inputs and a new evaluation period before a pilot. |
 | Pipeline to model chronology | 73,000 training, 2,800 validation and 2,800 test rows; training-only cohort selection and recursive withheld-period features. Observed validation history is legitimate at the final-test forecast origin. | Preserve chronology in any new-data workflow. |
 | Pipeline representation to fairness | CA_4 has four series; HOUSEHOLD_2 has nine. The same coverage warnings appear beside historical group errors in monitoring. | New labels and representative data are needed for live group-error monitoring. |
 | Model to dashboard and API | Frozen artifact hash and saved example agree. Public POST /predict returned HTTP 200 and 0.8481716946876521. | Maintain an explicit release record if the artifact changes. |
