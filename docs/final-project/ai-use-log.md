@@ -4,7 +4,7 @@ This record supports the final NXU AI Disclosure Form. It records assistance act
 
 ## Tool and scope
 
-ChatGPT with Codex workspace, GitHub and browser capabilities assisted with auditing Modules 1-5, comparing repository branches, inspecting existing model artifacts, preparing public API deployment, adding runtime/input monitoring, creating container configuration and writing automated tests. The existing trained model was reused; the assistant did not retrain it or create new final-test forecasts during this deployment step.
+ChatGPT with Codex workspace, GitHub and browser capabilities assisted with auditing Modules 1–5, comparing repository branches, inspecting existing model artifacts, preparing public API deployment, adding runtime/input monitoring, creating container configuration and writing automated tests. The existing trained model was reused; the assistant did not retrain it or create new final-test forecasts during this deployment step.
 
 ## Requests and iteration
 
@@ -27,7 +27,7 @@ No demographic variables, successful counterfactuals, achieved inventory savings
 - Render Linux build passed five API/monitoring tests in 1.64 seconds before initial deployment.
 - Monitoring displayed the successful public request separately from dated historical metrics.
 - Initial GitHub Actions run passed API tests and Docker image construction: https://github.com/basitbrn-NXU/retail-inventory-analytics/actions/runs/40063723810.
-- The final multi-container check outcome must be taken from the completed latest workflow, rather than inferred from this earlier successful build.
+- Corrected full multi-container CI passed in 1m 58s, including the API, Prometheus and Grafana health checks: https://github.com/basitbrn-NXU/retail-inventory-analytics/actions/runs/40064799431.
 
 ## Sources consulted for deployment
 
@@ -36,4 +36,3 @@ Render. (n.d.). Deploy a FastAPI app. https://render.com/docs/deploy-fastapi
 Render. (n.d.). Deploy for free. https://render.com/docs/free
 
 The primary project evidence is the existing Module 1 and 2 documents, Module 3 quality and bias records, Module 4 model validation report and artifacts, Module 5 presentation and dashboard, and the repository source. References for the integrated analytical and regulatory discussion will be verified during report preparation.
-
