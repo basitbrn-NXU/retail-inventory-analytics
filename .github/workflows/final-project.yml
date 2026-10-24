@@ -24,7 +24,7 @@ jobs:
       - name: Install API and testing dependencies
         run: pip install -r deployment/requirements.txt
       - name: Verify model parity and monitoring boundaries
-        run: python -m pytest deployment/test_cloud_api.py inventory/test_simulate.py -q
+        run: python -m pytest deployment/test_cloud_api.py inventory/test_simulate.py retraining/test_candidate.py -q
       - name: Build deployable API image
         run: docker build -f deployment/Dockerfile -t ban6800-api:ci .
       - name: Validate Compose configuration
