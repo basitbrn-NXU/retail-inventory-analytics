@@ -27,3 +27,22 @@ jobs:
         run: python -m pytest deployment/test_cloud_api.py -q
       - name: Build deployable API image
         run: docker build -f deployment/Dockerfile -t ban6800-api:ci .
+      - name: Validate Compose configuration
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-test-only-not-a-real-credential
+        run: docker compose config --quiet
+      - name: Start multi-container monitoring stack
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-test-only-not-a-real-credential
+        run: docker compose up --build -d api prometheus grafana
+      - name: Verify running services
+        run: |
+          curl --retry 30 --retry-delay 2 --retry-connrefused -fsS http://localhost:8000/health
+          curl --retry 30 --retry-delay 2 --retry-connrefused -fsS http://localhost:9090/-/ready
+          curl --retry 30 --retry-delay 2 --retry-connrefused -fsS http://localhost:3000/api/health
+          curl -fsS http://localhost:8000/monitoring/data
+      - name: Stop CI containers
+        if: always()
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-test-only-not-a-real-credential
+        run: docker compose down --volumes
