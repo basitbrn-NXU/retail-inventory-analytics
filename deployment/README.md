@@ -39,4 +39,6 @@ Runtime counters and bin indices are process-local. Metadata audit records are t
 
 The GitHub Actions workflow runs integration checks and builds the Docker image. Render also runs the tests during its build. Automatic deployment is not yet claimed: a public-repository service may require a connected provider or a deployment hook. Earlier submission branches remain separate.
 
+The workflow includes an opt-in `deploy-render` job that runs only after CI succeeds on a push to `final-project`. In the repository's `demo` environment, an authorized owner must configure `RENDER_DEPLOY_HOOK` as an encrypted secret, then set repository variable `ENABLE_RENDER_DEPLOY=true`. Keep the hook out of code, logs and this README. Configure the Render source branch as `final-project` and retain any desired environment approval rule. The hook requests a build; it does not prove readiness or promote a new model. Verify `/health`, the example prediction and `/monitoring` after a completed release. Set the variable false to disable CD. This integration is implemented but has not been activated or verified against a hook.
+
 Free hosting can sleep and loses runtime history. This service demonstrates public deployment; operational production approval remains false.
