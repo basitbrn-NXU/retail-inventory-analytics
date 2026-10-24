@@ -46,3 +46,15 @@ jobs:
         env:
           GRAFANA_ADMIN_PASSWORD: ci-test-only-not-a-real-credential
         run: docker compose down --volumes
+  deploy-render:
+    needs: api-and-monitoring
+    if: github.event_name == 'push' && github.ref == 'refs/heads/final-project' && vars.ENABLE_RENDER_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    environment: demo
+    steps:
+      - name: Request Render deployment after successful checks
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          test -n "$RENDER_DEPLOY_HOOK" || { echo "Configure the deployment hook secret before enabling CD."; exit 1; }
+          curl --fail --silent --show-error --max-time 30 --retry 2 -X POST "$RENDER_DEPLOY_HOOK" > /dev/null
