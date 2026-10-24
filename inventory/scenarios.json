@@ -26,4 +26,3 @@
   "terminal_stock": "Report ending on-hand and pipeline stock separately; no assumed salvage value or terminal acquisition charge",
   "targets": {"cost_reduction_fraction": 0.05, "unit_fill_rate": 0.95, "maximum_store_fill_rate_gap": 0.05}
 }
-
