@@ -26,7 +26,7 @@ Other inputs held at the declared base-case values:
 | 7 days | 0.54% | 94.68% | 10.77 percentage points |
 | 14 days | -0.25% | 94.81% | 11.98 percentage points |
 
-![Lead time comparison](lead_time_comparison.svg)
+The lead-time comparison figure is retained locally with the aggregate output files.
 
 Thirty-six paired scenarios combine lead times of 3, 7 and 14 days, shortage penalties of 5, 20 and 50, safety multipliers of zero and 1.645, and demand-proxy multipliers of 1.0 and 1.2. None of the 36 forecast-policy scenarios meets the cost, fill-rate and store-gap targets simultaneously. The analysis does not select a new preferred policy by searching these outcomes.
 
@@ -53,9 +53,9 @@ The simulator verifies the archived prediction hash, exact product/date alignmen
 
 - `inventory/scenarios.json` fixes assumptions and the base case.
 - `inventory/simulate.py` implements the comparison without model training.
-- `scenario_summary.csv` contains pooled results for both policies in all 36 scenarios.
-- `base_case_groups.csv` contains store/department aggregates for the base case.
-- `summary.json` records source hashes, base-case results and limitations.
-- The simulator also generates full aggregate `group_fill_rates.csv` locally. Per-series ledgers and source records are not published here.
+- Locally generated `scenario_summary.csv` contains pooled results for both policies in all 36 scenarios.
+- Locally generated `base_case_groups.csv` contains store/department aggregates for the base case.
+- Locally generated `summary.json` records source hashes, base-case results and limitations.
+- The simulator also generates full aggregate `group_fill_rates.csv` locally. Full result datasets, per-series ledgers and source records are not published here.
 
 The defensible business recommendation is to retain human review, investigate the under-served groups, obtain stock/receipts/cost evidence, and evaluate a revised policy on a new period before an operational pilot. The original inventory targets remain unmet under this analysis; the report should state that clearly.
