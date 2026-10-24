@@ -83,7 +83,7 @@ The pipeline produced 78,600 records: 73,000 training, 2,800 validation and 2,80
 
 The frozen gradient boosting model has final-test MAE 2.3337, RMSE 3.4014 and WAPE 54.56%, compared with baseline WAPE 67.00%. Overall bias is −1.37%, but HOUSEHOLD_2 underprediction is −32.23%. Store and department checks are operational equity diagnostics. Customer demographic fairness is unassessed. No post-test correction or promotion is applied.
 
-Inventory cost savings, 95% simulated fill rate, uncertainty coverage and store service gaps remain untested at this integration milestone. New performance and bias drift require observed future labels. The monitoring page separates these missing outcomes from historical scores and live input/activity checks. Automatic deployment is not enabled yet; passing CI verifies tests, image construction and live health checks of the API, Prometheus and Grafana containers.
+The final inventory analysis is linked at `docs/final-project/inventory/README.md`. Its declared seven-day base case reduces assumed cost by 0.54%, achieves 94.68% fill rate and has a 10.77 percentage-point store gap; the original inventory targets are unmet. This is exploratory simulation on the existing test period, not realized business savings or a new independent evaluation. Uncertainty coverage remains unassessed. New performance and bias drift require observed future labels. The monitoring page separates these missing outcomes from historical scores and live input/activity checks. Automatic deployment is not enabled yet; passing CI verifies tests, image construction and live health checks of the API, Prometheus and Grafana containers.
 
 ## Instructor navigation
 
