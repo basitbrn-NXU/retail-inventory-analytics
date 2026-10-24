@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-10-24T04:54:34Z",
+  "provider": "Render Free",
+  "service_url": "https://ban6800-retail-api.onrender.com",
+  "branch": "final-project",
+  "deployed_commit": "e0f7641767bfc2e7c81439259cae9d39dd947995",
+  "build_tests": {
+    "passed": 5,
+    "seconds": 1.64,
+    "platform": "Render Linux Python 3.12.15"
+  },
+  "public_prediction": {
+    "endpoint": "POST /predict",
+    "http_status": 200,
+    "prediction": 0.8481716946876521,
+    "request_id": "41c660a3-88da-4dd4-b7ad-f9f0f3862f7e",
+    "matches_archived_example": true
+  },
+  "monitoring_verified": {
+    "successful_prediction_rows": 1,
+    "status_200_requests": 1,
+    "live_drift_status": "insufficient_live_support"
+  },
+  "model_sha256": "764e977a39487fd64fa374b32e2b79c78a811fdfe8178bbde663a91243fbcad7",
+  "deployment_approved": false,
+  "boundaries": [
+    "Academic public demonstration, not an operational rollout",
+    "Local Docker engine inaccessible to agent; Compose configuration validation passed, multi-container execution not yet verified",
+    "Automated deployment not enabled",
+    "Counters and audit metadata reset on free hosting restarts; no durable cloud history"
+  ]
+}
